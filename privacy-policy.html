@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Privacy Policy — Azaan Alert</title>
+    <style>
+        :root {
+            --primary:      #636E29;
+            --primary-light:#E7ECAF;
+            --surface:      #FEFDED;
+            --on-surface:   #1A1A17;
+            --muted:        #5E5D57;
+            --outline:      #77756F;
+            --divider:      #C7C5BD;
+            --card-bg:      #FFFFFF;
+            --radius:       10px;
+        }
+
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+                         "Helvetica Neue", Arial, sans-serif;
+            background: var(--surface);
+            color: var(--on-surface);
+            line-height: 1.7;
+            font-size: 16px;
+        }
+
+        /* ── Header ─────────────────────────────────────────────────────── */
+        header {
+            background: var(--primary);
+            color: #fff;
+            padding: 48px 24px 40px;
+            text-align: center;
+        }
+
+        header .app-name {
+            font-size: 13px;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            opacity: 0.85;
+            margin-bottom: 8px;
+        }
+
+        header h1 {
+            font-size: clamp(26px, 5vw, 38px);
+            font-weight: 700;
+            letter-spacing: -0.5px;
+        }
+
+        header .updated {
+            margin-top: 10px;
+            font-size: 13px;
+            opacity: 0.75;
+        }
+
+        /* ── Layout ──────────────────────────────────────────────────────── */
+        main {
+            max-width: 780px;
+            margin: 0 auto;
+            padding: 40px 24px 64px;
+        }
+
+        /* ── Overview banner ─────────────────────────────────────────────── */
+        .overview {
+            background: var(--primary-light);
+            border-left: 4px solid var(--primary);
+            border-radius: var(--radius);
+            padding: 20px 24px;
+            margin-bottom: 40px;
+            color: #2a3400;
+            font-size: 15px;
+        }
+
+        /* ── Sections ────────────────────────────────────────────────────── */
+        section {
+            background: var(--card-bg);
+            border: 1px solid var(--divider);
+            border-radius: var(--radius);
+            padding: 28px 28px 24px;
+            margin-bottom: 24px;
+        }
+
+        section h2 {
+            font-size: 17px;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        section h2 .icon {
+            font-size: 20px;
+            line-height: 1;
+        }
+
+        section h3 {
+            font-size: 14px;
+            font-weight: 700;
+            color: var(--on-surface);
+            margin: 20px 0 6px;
+            text-transform: uppercase;
+            letter-spacing: 0.6px;
+        }
+
+        section p {
+            font-size: 15px;
+            color: var(--muted);
+            margin-bottom: 12px;
+        }
+
+        section p:last-child { margin-bottom: 0; }
+
+        /* ── Bullet list ─────────────────────────────────────────────────── */
+        ul.policy-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        ul.policy-list li {
+            font-size: 15px;
+            color: var(--muted);
+            padding: 6px 0 6px 24px;
+            position: relative;
+            border-bottom: 1px solid var(--divider);
+        }
+
+        ul.policy-list li:last-child { border-bottom: none; }
+
+        ul.policy-list li::before {
+            content: "✕";
+            position: absolute;
+            left: 0;
+            color: #c0392b;
+            font-size: 11px;
+            top: 9px;
+        }
+
+        ul.policy-list.allowed li::before {
+            content: "✓";
+            color: var(--primary);
+            font-size: 13px;
+            top: 7px;
+        }
+
+        /* ── Permissions table ───────────────────────────────────────────── */
+        .table-wrap { overflow-x: auto; }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 14px;
+        }
+
+        thead tr {
+            background: var(--primary-light);
+        }
+
+        thead th {
+            text-align: left;
+            padding: 10px 14px;
+            font-weight: 700;
+            color: #2a3400;
+            font-size: 13px;
+            letter-spacing: 0.4px;
+        }
+
+        tbody tr { border-bottom: 1px solid var(--divider); }
+        tbody tr:last-child { border-bottom: none; }
+
+        tbody td {
+            padding: 11px 14px;
+            color: var(--muted);
+            vertical-align: top;
+        }
+
+        tbody td:first-child {
+            font-weight: 600;
+            color: var(--on-surface);
+            white-space: nowrap;
+        }
+
+        /* ── Libraries ───────────────────────────────────────────────────── */
+        .lib-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            gap: 12px;
+        }
+
+        .lib-card {
+            border: 1px solid var(--divider);
+            border-radius: 8px;
+            padding: 14px 16px;
+        }
+
+        .lib-card .lib-name {
+            font-weight: 700;
+            font-size: 14px;
+            color: var(--on-surface);
+        }
+
+        .lib-card .lib-author {
+            font-size: 12px;
+            color: var(--outline);
+            margin: 2px 0 6px;
+        }
+
+        .lib-card .lib-desc {
+            font-size: 13px;
+            color: var(--muted);
+        }
+
+        /* ── Contact ─────────────────────────────────────────────────────── */
+        .contact-box {
+            background: var(--primary-light);
+            border-radius: var(--radius);
+            padding: 20px 24px;
+            font-size: 15px;
+            color: #2a3400;
+        }
+
+        .contact-box a {
+            color: var(--primary);
+            font-weight: 600;
+            text-decoration: none;
+        }
+
+        .contact-box a:hover { text-decoration: underline; }
+
+        /* ── Footer ──────────────────────────────────────────────────────── */
+        footer {
+            text-align: center;
+            padding: 24px;
+            font-size: 13px;
+            color: var(--outline);
+            border-top: 1px solid var(--divider);
+        }
+
+        footer strong { color: var(--primary); }
+
+        @media (max-width: 500px) {
+            section { padding: 20px 16px; }
+            main    { padding: 24px 16px 48px; }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="app-name">Azaan Alert</div>
+    <h1>Privacy Policy</h1>
+    <div class="updated">Last updated: February 2026</div>
+</header>
+
+<main>
+
+    <!-- Overview -->
+    <div class="overview">
+        Azaan Alert is designed to work entirely on your device. It does not collect, store,
+        or transmit any personal data. Your location is used only to calculate prayer times
+        and is never sent to any server.
+    </div>
+
+    <!-- Data We Access -->
+    <section>
+        <h2><span class="icon">📍</span> Data We Access</h2>
+
+        <h3>Location</h3>
+        <p>
+            Azaan Alert requests access to your device's GPS coordinates solely to calculate
+            accurate Islamic prayer times for your current position. Your coordinates are also
+            used to determine your country so the app can automatically select the regionally
+            appropriate prayer time calculation method.
+        </p>
+        <p>
+            Location is processed entirely on-device using the Android Geocoder and the Adhan
+            library. It is never transmitted to any server, never stored in the cloud, and never
+            shared with any third party.
+        </p>
+
+        <h3>Preferences &amp; Settings</h3>
+        <p>
+            Your preferences — including calculation method, madhab selection, per-prayer
+            enable/disable toggles, and notification settings — are stored locally on your
+            device using Android DataStore. This data never leaves your device.
+        </p>
+    </section>
+
+    <!-- Data We Don't Collect -->
+    <section>
+        <h2><span class="icon">🚫</span> Data We Do Not Collect</h2>
+        <ul class="policy-list">
+            <li>Personal information of any kind</li>
+            <li>Analytics, usage statistics, or crash reports</li>
+            <li>Advertising identifiers or tracking data</li>
+            <li>Account credentials — no registration is required</li>
+            <li>Contacts, messages, camera, or microphone data</li>
+            <li>Any data unrelated to prayer time calculation</li>
+        </ul>
+    </section>
+
+    <!-- Permissions -->
+    <section>
+        <h2><span class="icon">🔐</span> Permissions Explained</h2>
+        <div class="table-wrap">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Permission</th>
+                        <th>Why it is needed</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Location (Fine &amp; Coarse)</td>
+                        <td>Calculate prayer times and detect your region for the correct calculation method</td>
+                    </tr>
+                    <tr>
+                        <td>Post Notifications</td>
+                        <td>Display the Azan alert at prayer time</td>
+                    </tr>
+                    <tr>
+                        <td>Schedule Exact Alarm</td>
+                        <td>Fire the Azan notification at the precise prayer time</td>
+                    </tr>
+                    <tr>
+                        <td>Foreground Service</td>
+                        <td>Play the Azan audio without interruption</td>
+                    </tr>
+                    <tr>
+                        <td>Receive Boot Completed</td>
+                        <td>Restore scheduled alarms after a device restart</td>
+                    </tr>
+                    <tr>
+                        <td>Use Full Screen Intent</td>
+                        <td>Display the prayer alert on the lock screen when the alarm fires</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <p style="margin-top:16px;">
+            No permission is used for any purpose beyond what is listed above.
+        </p>
+    </section>
+
+    <!-- Audio -->
+    <section>
+        <h2><span class="icon">🔊</span> Audio</h2>
+        <p>
+            The Azan audio played by this app is bundled within the app itself.
+            No audio is streamed from the internet. The app does not record or
+            access your microphone at any time.
+        </p>
+    </section>
+
+    <!-- Third-Party Libraries -->
+    <section>
+        <h2><span class="icon">📦</span> Third-Party Libraries</h2>
+        <p>
+            Azaan Alert uses the following open-source libraries. None of them collect
+            or transmit user data.
+        </p>
+        <div class="lib-grid">
+            <div class="lib-card">
+                <div class="lib-name">Adhan</div>
+                <div class="lib-author">Batoul Apps</div>
+                <div class="lib-desc">On-device Islamic prayer time calculation</div>
+            </div>
+            <div class="lib-card">
+                <div class="lib-name">Jetpack Libraries</div>
+                <div class="lib-author">Google</div>
+                <div class="lib-desc">UI, navigation, background scheduling, and local storage</div>
+            </div>
+            <div class="lib-card">
+                <div class="lib-name">Dagger 2</div>
+                <div class="lib-author">Google</div>
+                <div class="lib-desc">Compile-time dependency injection — no network access</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Children's Privacy -->
+    <section>
+        <h2><span class="icon">👶</span> Children's Privacy</h2>
+        <p>
+            Azaan Alert does not knowingly collect any information from anyone,
+            including children under the age of 13.
+        </p>
+    </section>
+
+    <!-- Changes -->
+    <section>
+        <h2><span class="icon">📝</span> Changes to This Policy</h2>
+        <p>
+            If this policy changes in a future version of the app, the updated version
+            will be made available on the app's store listing. Continued use of the app
+            after any changes constitutes acceptance of the revised policy.
+        </p>
+    </section>
+
+    <!-- Contact -->
+    <section>
+        <h2><span class="icon">✉️</span> Contact</h2>
+        <div class="contact-box">
+            If you have questions or concerns about this privacy policy, please contact:<br /><br />
+            <strong>Coder.ai</strong><br />
+            <a href="mailto:contact@coder.ai">contact@coder.ai</a>
+        </div>
+    </section>
+
+</main>
+
+<footer>
+    <strong>Coder.ai</strong> &nbsp;·&nbsp; © 2026 Coder.ai. All rights reserved.
+</footer>
+
+</body>
+</html>
